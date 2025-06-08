@@ -1,7 +1,9 @@
 .list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
 }
 
 .item {
@@ -9,21 +11,53 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
-    padding: 8px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 4px;
     border: 1px solid #ddd;
+    font-size: 14px;
+    flex-direction: column;
 }
 
 .button {
-    padding: 6px 10px;
+    padding: 8px 14px;
     background-color: #f44336;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 .button:hover {
     background-color: #d32f2f;
+}
+
+@media screen and (min-width: 760px) {
+    .item {
+        flex-direction: row;
+        font-size: 15px;
+    }
+
+    .button {
+        margin-top: 0;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .list {
+        max-width: 800px;
+    }
+
+    .item {
+        padding: 14px 18px;
+        font-size: 16px;
+    }
+
+    .button {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
 }

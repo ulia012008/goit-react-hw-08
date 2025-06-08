@@ -1,0 +1,33 @@
+.header {
+    padding: 16px;
+
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 auto;
+
+}
+
+@media screen and (min-width: 760px) {
+    .header {
+        padding: 20px;
+        font-size: 20px;
+        flex-wrap: nowrap;
+        height: 80px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        padding: 20px;
+        font-size: 22px;
+        height: 100px;
+    }
+}
