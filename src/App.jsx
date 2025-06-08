@@ -19,7 +19,9 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  if (isRefreshing) return <b>Refreshing user...</b>;
+  if (isRefreshing) {
+    return <b>Refreshing user...</b>;
+  }
 
   return (
     <Routes>

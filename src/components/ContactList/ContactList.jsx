@@ -15,29 +15,17 @@ const ContactList = () => {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
+  const handleDelete = (id) => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <div className={css.container}>
       {loading && <p>Loading...</p>}
       {error && <p className={css.error}>Error: {error}</p>}
       <ul className={css.list}>
-        {/* {contacts.map(({ id, name, phone }) => ( */}
         {contacts.map((contact) => (
-          <Contact
-            key={contact.id}
-            contact={contact}
-            onDelete={(id) => dispatch(deleteContact(id))}
-          />
-          // <li key={id} className={css.item}>
-          //   <p>
-          //     {name}: {phone}
-          //   </p>
-          //   <button
-          //     onClick={() => dispatch(deleteContact(id))}
-          //     className={css.button}
-          //   >
-          //     Delete
-          //   </button>
-          // </li>
+          <Contact key={contact.id} contact={contact} onDelete={handleDelete} />
         ))}
       </ul>
       {!loading && contacts.length === 0 && <p>No contacts found.</p>}
